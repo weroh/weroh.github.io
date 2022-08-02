@@ -6,3 +6,4 @@ dist/main.js.LICENSE.txt
 webpack.config.js
 src/index.js
 build.bat
+/src/
