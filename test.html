@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<button class="test">Test</button>
+	<textarea class="result" style="width:100%;height:500px"></textarea>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		$(function() {
+
+			$("button.test").on("click", function() {
+				var postTest = {
+					"firstName": "Ryan",
+					"lastName": "Schuerger",
+					"phone": "6148865942",
+					"zipCode": "45069",
+					"uid": "solotest@ryanas.com",
+					"isBusinessCustomer": false,
+					"organizationDetail": {
+						"companyEmailAddress": "",
+						"firstLineName": "",
+						"secondLineName": "",
+						"thirdLineName": "",
+						"fourthLineName": "",
+						"companyCountry": "",
+						"companyState": "",
+						"companyPostalCode": ""
+					},
+					"color": "RED",
+					"wrap": false,
+					"interestedInFinancing": false,
+					"closestSoloLocation": "Los Angeles, CA",
+					"transactionId": "",
+					"status": "placed",
+					"quantity": 1,
+					"stripeId": "pi_3LTSXhKUeczuktTY0QnfReX1",
+					"registered": false,
+					"downPayment": 250,
+					"downPaymentFee": 7.55,
+					"downPaymentNet": 242.45,
+					"utmSource": "",
+					"utmMedium": "",
+					"utmCampaign": "",
+					"utmTerm": "",
+					"utmContent": "",
+					"uuid": "8F047E69-8B99-412C-87D6-4B5150DD819E",
+					"productId": "000000000001000211"
+				};
+
+
+				$.post("https://staging.electrameccanica.com/api/orders", postTest, function(data) {
+					$(".result").val(data);
+				});
+			});
+		})(jQuery);
+	</script>
+</body>
+</html>
